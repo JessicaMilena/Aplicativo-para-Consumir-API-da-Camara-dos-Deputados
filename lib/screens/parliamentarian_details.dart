@@ -127,117 +127,46 @@ class _ParliamentarianDetailsState extends State<ParliamentarianDetails> {
                 SizedBox(
                   width: double.infinity,
                   height: 200,
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 200,
-                        height: 200,
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: Colors.blue,
-                                ),
-                              ),
-                              child: ClipOval(
-                                child: Image.network(
-                                  widget.parliamentarian.photo,
-                                  width: 100,
-                                  height: 100,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            Text(
-                              widget.parliamentarian.name,
-                              style: const TextStyle(
+                  child: Center(
+                    child: Container(
+                      width: 200,
+                      height: 200,
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
                                 color: Colors.blue,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
                               ),
                             ),
-                          ],
-                        ),
+                            child: ClipOval(
+                              child: Image.network(
+                                widget.parliamentarian.photo,
+                                width: 100,
+                                height: 100,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            widget.parliamentarian.name,
+                            style: const TextStyle(
+                              color: Colors.blue,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
-                      Container(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: const BoxDecoration(
-                                border: Border(
-                                  left: BorderSide(
-                                    color: Colors.blue,
-                                    width: 1,
-                                  ),
-                                ),
-                              ),
-                              child: DefaultTextStyle(
-                                style: const TextStyle(
-                                  color: Colors.blue,
-                                  fontSize: 10,
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Partido: ${widget.parliamentarian.party}',
-                                    ),
-                                    Text(
-                                      'Estado: ${widget.parliamentarian.uf}',
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              width: 170,
-                              padding: const EdgeInsets.all(10),
-                              decoration: const BoxDecoration(
-                                border: Border(
-                                  left: BorderSide(
-                                    color: Colors.blue,
-                                    width: 1,
-                                  ),
-                                ),
-                              ),
-                              child: DefaultTextStyle(
-                                style: const TextStyle(
-                                  color: Colors.blue,
-                                  fontSize: 10,
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Legislatura: ${widget.parliamentarian.legislature}',
-                                    ),
-                                    Text(
-                                      'Email: ${widget.parliamentarian.email}',
-                                    ),
-                                    Text(
-                                      'URI: ${widget.parliamentarian.uri}',
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(10),
                   child: Column(
                     children: [
                       Container(
@@ -284,42 +213,6 @@ class _ParliamentarianDetailsState extends State<ParliamentarianDetails> {
                                   Text(
                                     'Escolaridade: ${detailsStore.state.value.education}',
                                   ),
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(6),
-                                    margin: const EdgeInsets.only(
-                                        top: 10, bottom: 10),
-                                    alignment: Alignment.center,
-                                    decoration: const BoxDecoration(
-                                      border: Border(
-                                        bottom: BorderSide(
-                                          color: Colors.blue,
-                                          width: 1,
-                                        ),
-                                        top: BorderSide(
-                                          color: Colors.blue,
-                                          width: 1,
-                                        ),
-                                      ),
-                                    ),
-                                    child: const Text(
-                                      'Detalhes do Gabinete',
-                                      style: TextStyle(
-                                        color: Colors.blue,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                  for (var officeinfo in detailsStore
-                                      .state.value.office!.entries)
-                                    Text(
-                                      '${officeinfo.key}: ${officeinfo.value}',
-                                    ),
                                 ],
                               ),
                             ],

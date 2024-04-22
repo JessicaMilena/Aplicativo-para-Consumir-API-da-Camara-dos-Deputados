@@ -27,5 +27,3 @@ Route controller(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const Home());
   }
 }
-//este código define as rotas da aplicação e
-// a lógica para navegar entre as telas com base nas rotas especificadas. 
